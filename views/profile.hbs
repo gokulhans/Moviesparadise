@@ -38,29 +38,29 @@ document.getElementById('img').src = URL.createObjectURL(event.target.files[0])
 
 
 <div class="container blogs">
-<div class="row">
-<h1 class="username"><span style="color: black;">welcome</span>  {{user.name}}</h1>
-    {{#each blogs}}
-    <div class="blog-div col-12 col-md-5 ">
-        <img class="blog-img" src="{{this.imgurl}}">
-        <div class="text">
-            <a href="/users/blog/{{this._id}}">
-                <h5>{{this.title}}</h5>
-                {{!-- <a href="/section/{{this.section}}">
-                    <h6>{{this.section}}</h6>
-                </a> --}}
-            </a>
-            <div class="author">
-                {{!-- <img src="/images/{{this.userid}}.jpg" alt="image">
-                <h4> {{this.name}}</h4> --}}
-                <a style="margin-left: 10px;" href="/users/delete/{{this._id}}">Delete</a>
-                <a style="margin-left: 10px;" href="/users/edit/{{this._id}}">Edit</a>
+    <div class="row">
+        <h1 class="username"><span style="color: black;">welcome</span> {{user.name}}</h1>
+        {{#each blogs}}
+        <div class="blog-div col-12 col-md-5 ">
+            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="text">
+                <a href="/users/blog/{{this._id}}">
+                    <h5>{{this.title}}</h5>
+                    {{!-- <a href="/section/{{this.section}}">
+                        <h6>{{this.section}}</h6>
+                    </a> --}}
+                </a>
+                <div class="author">
+                    {{!-- <img src="/images/{{this.userid}}.jpg" alt="image">
+                    <h4> {{this.name}}</h4> --}}
+                    <a style="margin-left: 10px;" href="/users/delete/{{this._id}}">Delete</a>
+                    <a style="margin-left: 10px;" href="/users/edit/{{this._id}}">Edit</a>
+                </div>
             </div>
         </div>
-    </div>
-    {{/each}}
+        {{/each}}
 
-</div>
+    </div>
 </div>
 
 
@@ -294,17 +294,20 @@ document.getElementById('img').src = URL.createObjectURL(event.target.files[0])
 
 <style>
     @media only screen and (max-width: 600px) {
-        .username{
+        .username {
             align-self: center;
             font-size: 22px;
             color: rgb(0, 170, 0);
             font-weight: 600;
             margin-left: 10px;
+            margin-bottom: 10px;
         }
-        .author a{
+
+        .author a {
             color: red;
             font-weight: 600;
         }
+
         .text h6 {
             color: rgb(0, 170, 0);
             font-weight: 600;
@@ -324,7 +327,7 @@ document.getElementById('img').src = URL.createObjectURL(event.target.files[0])
         .bot-div {
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             position: absolute;
-            top:31%;
+            top: 31%;
             right: 12%;
             background: #0db8ec;
             display: flex;
@@ -443,7 +446,7 @@ document.getElementById('img').src = URL.createObjectURL(event.target.files[0])
             object-fit: cover;
             position: absolute;
             top: 17%;
-            right:12%;
+            right: 12%;
         }
 
         .home p {
@@ -502,17 +505,17 @@ document.getElementById('img').src = URL.createObjectURL(event.target.files[0])
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 0px;
             width: 100%;
             height: 18%;
-            padding: 15px;
-            background-color: rgb(235, 235, 235);
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
             border-radius: 0.5rem;
         }
 
         .blog-img {
             width: 30%;
-            height: 15vh;
+            height: 12vh;
             border-radius: 0.5rem;
             object-fit: cover;
             margin-right: 5%;
