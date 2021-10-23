@@ -113,13 +113,15 @@ router.get('/newblog', async function (req, res) {
   res.render('newblog', { user })
 });
 router.post('/newblog', async function (req, res) {
-  console.log(req.body);
   let blogdata = req.body
   if (!blogdata.imgurl) {
     blogdata.imgurl = 'https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?cs=srgb&dl=pexels-asad-photo-maldives-3293148.jpg&fm=jpg'
   }
-  db.get().collection('blogs').insertOne(blogdata)
-  res.redirect('/users/blog/:id')
+  db.get().collection('blogs').insertOne(blogdata).then((response)=>{
+    console.log(response.insertedId);
+    let blog =blogdata;
+    res.render('blog',{blog})
+  })
 });
 
 router.post('/search', async function (req, res) {
