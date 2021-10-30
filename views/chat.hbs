@@ -1,0 +1,97 @@
+<div class="head">
+{{!-- halo bitch..welcome to this bot iam gbot..  --}}
+{{!-- ok sir...thankyou..for youffr welcome.. --}}
+    <div class="m-body">
+        {{#each chats}}
+        <div class="msg">
+        <small class="user-name">{{this.user}}</small>
+         <h6>{{this.text}} </h6>
+        <small class="time">{{this.time}} {{this.date}} </small>
+        </div>
+        {{/each}}
+
+        <h4 id="new"></h4>
+
+    </div>
+
+
+</div>
+<form action="/chat/post/" method="post">    
+<div class="row">
+    <input name="text" type="search"  placeholder="ask something..." autofocus></input>
+    <button class="btn msg-btn btn-success " type="submit">></button>
+</div>
+</form>
+
+
+<style>
+    .msg {
+        color: black;
+        background-color: #d1ffbb;
+        padding: 10px;
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 4px;
+        font-size: 17px;
+    }
+   
+    .user-name {
+        color: #5B45D6;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .time {
+        font-size: 8px;
+        color: rgb(77, 77, 77);
+        font-weight:600;
+        font-family:'Times New Roman', Times, serif ;
+    }
+    h4 {
+        color: white;
+    }
+    .m-body {
+        width: 90%;
+        height: 60vh;
+        margin: 5%;
+        padding: 10px;
+        border-radius: 1rem;
+        overflow-y: scroll;
+    }
+
+    .m-body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .head {
+        font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    input {
+        margin: 10px;
+        border-radius: 10px;
+        font-family: cursive;
+        font-size: 500;
+        padding: 10px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .msg-btn {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 60px;
+    }
+</style>
