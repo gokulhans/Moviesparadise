@@ -8,7 +8,7 @@ router.get('/', async function (req, res) {
   let id = req.session.user
   let user = await db.get().collection('users').findOne({ _id: ObjectId(id) })
   let blogs = await db.get().collection('blogs').find().sort({title:1}).toArray()
-  let newblog = blogs[0]
+  let newblog = blogs[7]
   if (user) {
     res.render('index', { blogs, user,newblog });
   }
