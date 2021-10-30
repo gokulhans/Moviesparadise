@@ -120,7 +120,8 @@ router.post('/newblog', async function (req, res) {
   db.get().collection('blogs').insertOne(blogdata).then((response)=>{
     console.log(response.insertedId);
     let blog =blogdata;
-    res.render('blog',{blog})
+    let user = db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
+    res.render('blog',{blog,user})
   })
 });
 
