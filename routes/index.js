@@ -36,7 +36,7 @@ router.post('/upload', function (req, res) {
 
 });
 
-router.get('/admin', async function (req, res) {
+router.get('/admin@9846', async function (req, res) {
   let blogs = await db.get().collection('blogs').find().toArray()
   let users = await db.get().collection('users').find().toArray()
   res.render('admin', { blogs, users });
@@ -45,13 +45,13 @@ router.get('/admin', async function (req, res) {
 router.get('/delete/:id', (req, res) => {
   id = req.params.id
   db.get().collection('blogs').deleteOne({ _id: ObjectId(id) })
-  res.redirect('/admin')
+  res.redirect('/admin@9846')
 })
 
 router.get('/deleteuser/:id', (req, res) => {
   id = req.params.id
   db.get().collection('users').deleteOne({ _id: ObjectId(id) })
-  res.redirect('/admin')
+  res.redirect('/admin@9846')
 })
 
 router.get('/section/:section', async function (req, res) {
