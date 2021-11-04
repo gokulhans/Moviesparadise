@@ -18,6 +18,9 @@ router.get('/', async function (req, res) {
 router.get('/about', function (req, res) {
   res.render('about');
 });
+router.get('/google2da743e7de14a643.html',function (req, res) {
+  res.sendFile('google2da743e7de14a643.html');
+});
 
 router.post('/upload', function (req, res) {
   let data = req.body
